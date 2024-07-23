@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
-import blogLogo from "./Assets/blogLogo.gif";
+import blogLogo from "./Assets/Logo.png";
 import Blogs from "./components/Blogs";
 import BlogPostsForm from "./components/BlogPostsForm";
 import useStyles from "./styles/app.styles.js";
@@ -14,7 +14,6 @@ function App() {
   const appStyles = useStyles();
 
   useEffect(() => {
-    // Dispatch fetchAllBlogPosts action when the component mounts or blogPostId changes
     dispatch(fetchAllBlogPosts());
   }, [blogPostId, dispatch]);
 
@@ -33,7 +32,7 @@ function App() {
             height="100"
           />
           <Typography className={appStyles.title} variant="h2" align="center">
-            Mern awesome blog
+            Gomyblog
           </Typography>
         </AppBar>
         <Grow in>
@@ -44,14 +43,12 @@ function App() {
             spacing={2}
           >
             <Grid item xs={12} sm={3}>
-              {/* Render BlogPostsForm component */}
               <BlogPostsForm
                 blogPostId={blogPostId}
                 setBlogPostId={setBlogPostId}
               />
             </Grid>
             <Grid item xs={12} sm={9}>
-              {/* Render Blogs component */}
               <Blogs setBlogPostId={setBlogPostId} />
             </Grid>
           </Grid>

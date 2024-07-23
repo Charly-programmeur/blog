@@ -1,4 +1,3 @@
-// components/BlogPosts.js
 import React from "react";
 import {
   Typography,
@@ -29,45 +28,40 @@ const BlogPosts = ({ post, setCurrentId }) => {
           className={blogPostStyles.imageContainer}
           image={post.fileUpload || blogImageLogo}
           title={post.title}
-        />{" "}
+        />
         <div className={blogPostStyles.nameOverlay}>
-          <Typography variant="h6"> {post.creator} </Typography>{" "}
+          <Typography variant="h6">{post.creator}</Typography>
           <Typography variant="body2">
-            {" "}
-            {moment(post.createdAt).fromNow()}{" "}
-          </Typography>{" "}
-        </div>{" "}
+            {moment(post.createdAt).fromNow()}
+          </Typography>
+        </div>
         <div className={blogPostStyles.editOverlay}>
           <Button
-            style={{
-              color: "white",
-            }}
+            style={{ color: "white" }}
             size="small"
             onClick={() => setCurrentId(post._id)}
           >
-            <EditIcon fontSize="default" />
-          </Button>{" "}
-        </div>{" "}
+            <EditIcon fontSize="medium" />
+          </Button>
+        </div>
         <div className={blogPostStyles.tagSection}>
           <Typography variant="body2" color="textSecondary" component="h2">
-            {" "}
-            {post.tags.map((tag) => `#${tag} `)}{" "}
-          </Typography>{" "}
-        </div>{" "}
+            {post.tags.map((tag) => `#${tag} `)}
+          </Typography>
+        </div>
         <Typography
           className={blogPostStyles.titleSection}
           gutterBottom
           variant="h5"
           component="h2"
         >
-          {post.title}{" "}
-        </Typography>{" "}
+          {post.title}
+        </Typography>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {" "}
-            {post.description}{" "}
-          </Typography>{" "}
-        </CardContent>{" "}
+            {post.description}
+          </Typography>
+        </CardContent>
         <CardActions className={blogPostStyles.cardActions}>
           <Button
             size="small"
@@ -75,16 +69,16 @@ const BlogPosts = ({ post, setCurrentId }) => {
             onClick={() => dispatch(upvoteBlogPosts(post._id))}
           >
             <ArrowUpwardIcon fontSize="small" /> {post.likeCount}{" "}
-          </Button>{" "}
+          </Button>
           <Button
             size="small"
             color="primary"
             onClick={() => dispatch(removeBlogPosts(post._id))}
           >
-            <DeleteIcon fontSize="big" />
-          </Button>{" "}
-        </CardActions>{" "}
-      </Card>{" "}
+            <DeleteIcon fontSize="large" />
+          </Button>
+        </CardActions>
+      </Card>
     </>
   );
 };

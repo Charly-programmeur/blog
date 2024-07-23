@@ -8,8 +8,6 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(5),
-    backgroundColor: theme.palette.background.paper,
-    // Ajoutez d'autres styles de couleur, de typographie selon votre thème
   },
   chooseFile: {
     width: "95%",
@@ -17,15 +15,10 @@ export default makeStyles((theme) => ({
   },
   publishButton: {
     marginBottom: 10,
-    // Ajoutez des styles de couleur, de typographie selon votre thème
   },
   form: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
-    // Assurez-vous que votre formulaire est réactif ici
-    [theme.breakpoints.down("sm")]: {
-      // Styles pour les tailles d'écran plus petites (mobile par exemple)
-    },
   },
 }));
